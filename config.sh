@@ -4,11 +4,7 @@
 function pre_build {
     # Any stuff that you need to do before you start building the wheels
     # Runs in the root directory of this repository.
-    echo "Running pre-build installs"
-    if [ -z "$IS_OSX" ]; then
-        echo "Installing HDF5 libs"
-        apt install libhdf5-serial-dev libnetcdf-dev
-    fi
+    build_hdf5
 }
 
 function run_tests {
