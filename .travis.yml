@@ -43,6 +43,9 @@ install:
     - build_wheel $REPO_DIR $PLAT
 
 script:
+    # Run pre_build again to install netCDF4
+    - source config.sh
+    - pre_build
     - install_run $PLAT
 
 after_success:
